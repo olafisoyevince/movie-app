@@ -10,13 +10,13 @@ const App = () => {
   const [searchField, setSearchField] = useState("");
 
   useEffect(() => {
-    const URL = `http://www.omdbapi.com/?s=${searchField}&apikey=2c71b095`;
+    const URL = `https://www.omdbapi.com/?s=${searchField}&apikey=2c71b095`;
 
     const fetchData = setTimeout(() => {
       fetch(URL)
         .then((response) => response.json())
         .then((data) => setMovies(data.Search));
-    }, 1000);
+    }, 500);
     return () => clearTimeout(fetchData);
   }, [searchField]);
 
