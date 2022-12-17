@@ -3,7 +3,7 @@ import CardList from "./components/CardList";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
-import axios from "axios";
+import "../src/App.css";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -13,9 +13,9 @@ const App = () => {
     const URL = `http://www.omdbapi.com/?s=${searchField}&apikey=2c71b095`;
 
     const fetchData = setTimeout(() => {
-      axios.get(URL).then((response) => {
-        setMovies(response.data.Search);
-      });
+      fetch(URL)
+        .then((response) => response.json())
+        .then((data) => setMovies(data.Search));
     }, 1000);
     return () => clearTimeout(fetchData);
   }, [searchField]);

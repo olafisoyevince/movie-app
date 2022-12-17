@@ -6,7 +6,7 @@ const CardList = ({ movies, searchField }) => {
       <p className="pt-[2.0625rem] pb-[1.625rem] md:pt-[3rem] ">
         {movies !== undefined ? `Showing results for '${searchField}'` : ""}
       </p>
-      <div className=" flex gap-3 overflow-auto scrollbar-hide">
+      <div className=" flex gap-3 no-scrollbar overflow-x-auto">
         {movies !== undefined
           ? movies.map((movie, id) => {
               return (

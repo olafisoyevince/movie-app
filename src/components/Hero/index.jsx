@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div>
       <div
-        className="pt-24 pb-20 md:pt-28 md:pb-32 bg-cover "
+        className="pt-24 pb-20 md:pt-28 md:pb-32 bg-cover no-scrollbar"
         style={backgroundImageStyle}
       >
         <div className=" h-full w-screen text-center lg:text-left">
